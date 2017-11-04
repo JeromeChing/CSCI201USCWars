@@ -14,7 +14,7 @@ public class CreateBuildings {
 		Building annenberg = new Building("Annenberg Building", 3000000, 20, 20, 20);
 		Building ped = new Building("PED", 500000, 40, 10, 10);
 		Building wph = new Building("WPH", 300000, 20, 20, 20);
-		Building bovard = new Building("Bovard Auditorian", 2000000, 10, 40, 10);
+		Building bovard = new Building("Bovard Auditoriam", 2000000, 10, 40, 10);
 		
 		Building kap = new Building("KAP", 200000, 20, 20, 20);
 		Building sgm = new Building("SGM", 300000, 20, 20, 20);
