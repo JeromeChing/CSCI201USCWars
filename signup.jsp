@@ -24,10 +24,14 @@
 			<p><font align="center" size="+5">USC Mafia Wars</font><br/></p>
 			<p><font align="center" size="+3">User Registration</font></p>
 		</center>
-		<form id="signupform" align="center">
-			<b><label>Username: </label> <input id="userName" type="text" name="usersignup"> <br />
-			<label>Password: </label> <input id="password" type="text" name="passwordsignup"> <br /><br/>
-			<input id="submit" class="button" type="submit" value="Register"><br/>
-		</form>
+		<div align="center">
+			<form id="signupform" method="POST" action="register.jsp">
+				<b>Username: </b> <input type="text" id="username" name="username"/> <br />
+				<b>Password: </b> <input type="password" id="password" name="password"> <br />
+				<p></p>
+				<input id="submit" class="button" type="submit" value="Register"><br/>
+			</form>
+			<span style="color: black;font-weight:bold">${err!=null? err : ''}</span><br>
+		</div>
 	</body>
 </html>
