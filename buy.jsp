@@ -1,7 +1,20 @@
 <%@ page language="java" contentType="text/html; charset=BIG5"
     pageEncoding="BIG5"%>
+<%@ page import="classes.*"%>
+<%@ page import="java.util.ArrayList"%>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
+<%
+	gameInit g = new gameInit();
+	ArrayList<Sports> sportsList = new ArrayList<Sports>();
+	ArrayList<Building> buildingsList = new ArrayList<Building>();
+
+	g.createSportsList(sportsList);
+	g.createBuildingList(buildingsList);
+	
+	
+%>
 	<head>
 		<meta charset="BIG5">
 		<title>Buy Screen</title>
@@ -38,32 +51,19 @@
 			</tr>
 			<tr>
 				<td valign="top" align="center">
-				<div style="border:2px dotted black"><img src="Building Pictures/Annenberg.jpg" width="70px" height="70px"><br>
-				Price = $100<br>
-				<button type="button" name="incrementAnnenberg" onclick="incrementAnnenberg()">+</button>
-				<button type="button" name="decrementAnnenberg" onclick="decrementAnnenberg()">-</button></div><br>
 				
-				<div style="border:2px dotted black"><img src="Building Pictures/Bookstore.jpg" width="70px" height="70px"><br>
-				Price = $100<br>
-				<button type="button" name="incrementBookstore">+</button>
-				<button type="button" name="decrementBookstore">-</button></div><br>
+				<%
+				for(int i = 0; i < buildingsList.size(); i++) {
+				%>
+					
+					<div style="border:2px solid black"><%=buildingsList.get(i).getName() %><br><img src=<%=buildingsList.get(i).getUrl() %> width="70px" height="70px"><br>
+					Price $<%=buildingsList.get(i).getPrice() %><br>
+					<button type="button" name="incrementAnnenberg" onclick="incrementAnnenberg()">+</button>
+					<button type="button" name="decrementAnnenberg" onclick="decrementAnnenberg()">-</button></div><br>
 				
-				<div style="border:2px dotted black"><img src="Building Pictures/Bovard.jpg" width="70px" height="70px"><br>
-				Price = $200<br>
-				<button type="button" name="incrementBovard">+</button>
-				<button type="button" name="decrementBovard">-</button></div><br>
-				
-				<div style="border:2px dotted black"><img src="Building Pictures/Colliseum.jpg" width="70px" height="70px"><br>
-				Price = $300<br>
-				<button type="button" name="incrementColliseum">+</button>
-				<button type="button" name="decrementColliseum">-</button></div><br>
-				
-				<div style="border:2px dotted black"><img src="Building Pictures/Cromwell.jpg" width="70px" height="70px"><br>
-				Price = $400<br>
-				<button type="button" name="incrementCromwell">+</button>
-				<button type="button" name="decrementCromwell">-</button></div><br>
-				20 buildings more...
-				</td>
+				<%
+				}
+				%>
 				
 				<td valign="top" align="center">
 				Team 1 <br>
